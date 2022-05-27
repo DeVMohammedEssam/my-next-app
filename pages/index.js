@@ -17,6 +17,8 @@ export default function Home({ data }) {
 
 export async function getServerSideProps() {
   return {
-    data: "hello world",
+    props: {
+      data: "hello world",
+    },
   };
 }
