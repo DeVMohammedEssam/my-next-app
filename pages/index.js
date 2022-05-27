@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useTranslation } from "next-i18next";
 import styles from "../styles/Home.module.css";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 export default function Home({ data }) {
   const { t } = useTranslation();
   return (
@@ -21,7 +20,6 @@ export async function getServerSideProps({ locale }) {
   return {
     props: {
       data: "hello world",
-      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
